@@ -7,7 +7,7 @@ import { Modal } from './components/Modal/Modal';
 function App() {
   return (
     <>
-      <Modal />
+      {/* <Modal /> */}
       <div className="App">
         <MainContainer>
           <Menu />
