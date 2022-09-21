@@ -1,46 +1,64 @@
 @import '../../assets/style';
 
-.card {
+.wrapper {
+  width: 310px;
+  height: 148px;
+  position: relative;
+  perspective: 1000px;
+}
+
+.card,
+.card-translate {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 310px;
-  height: 148px;
   padding: 30px;
-  background: #B9CCDB;
   border-radius: 40px;
-  position: relative;
-  cursor: pointer;
-  transition: 0.2s;
-
-  &:hover {
-    box-shadow: 0px 6px 12px -10px rgba(0, 0, 0, 0.3);
-    transform: translateY(-2px);
-  }
-
-  &:hover>.card-corner {
-    background: $practice-color;
-
-  }
-
-  @media (max-width: 445px) {
-    max-width: 250px;
-  }
+  backface-visibility: hidden;
+  transition: 1s;
 }
 
 .card-corner {
   position: absolute;
-  width: 40px;
-  height: 40px;
-  right: 0;
-  bottom: 0;
+  width: 25px;
+  height: 25px;
+  right: 15px;
+  bottom: 15px;
   background: #95AABB;
-  border-radius: 40px 0px 40px;
-  transition: 0.2s;
-
+  border-radius: 50%;
+  transition: 0.5s;
+  z-index: 1;
 }
 
-input {
+.wrapper:hover .card-corner {
+  transform: scale(.2) translateX(-20px);
+  opacity: 0;
+}
+
+.card {
+  background: #B9CCDB;
+}
+
+.card-translate {
+  background: $practice-card-color;
+  transform: rotateY(180deg);
+}
+
+.wrapper:hover .card {
+  transform: rotateY(180deg);
+}
+
+.wrapper:hover .card-translate {
+  box-shadow: 0px 6px 22px -10px rgba(0, 0, 0, 0.3);
+  transform: rotateY(360deg);
+}
+
+.card-input,
+.card-translate-input {
   // all: unset;
   outline: none;
   width: 250px;
@@ -55,10 +73,16 @@ input {
   overflow: hidden;
   text-overflow: ellipsis;
 
-  & ::placeholder {
+  &::placeholder {
     font-weight: 700;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 29px;
     color: #95AABB;
+  }
+}
+
+.card-translate-input {
+  &::placeholder {
+    color: $practice-color;
   }
 }
