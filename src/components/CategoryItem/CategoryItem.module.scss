@@ -1,0 +1,32 @@
+@import '../../assets/style';
+
+.categoryItem {
+  margin: 10px 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+  cursor: pointer;
+  width: 142px;
+  text-align: center;
+  line-height: 44px;
+  border-radius: 50px;
+  transition: background 0.3s;
+
+  &:hover {
+    color: #fff;
+    background: #5198AE;
+  }
+}
+
+.categoryItemActive {
+  text-align: center;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 44px;
+  color: #fff;
+  width: 142px;
+  background: #5198AE;
+  border-radius: 50px;
+}

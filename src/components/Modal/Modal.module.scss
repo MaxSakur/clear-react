@@ -1,0 +1,63 @@
+@import '../../assets/style';
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 40px;
+  background: white;
+  border-radius: 40px;
+  min-width: 300px;
+}
+
+input {
+  // all: unset;
+  outline: none;
+  width: 350px;
+  text-align: center;
+  border: none;
+  background: #ECF5F5;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 29px;
+  color: #000000;
+  padding: 10px 10px;
+  border-radius: 15px;
+
+  &::placeholder {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+    color: #95AABB;
+  }
+}
+
+button {
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 30px;
+  background: $practice-card-color;
+  margin: 20px 0 0 10px;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    background: $practice-color;
+  }
+}

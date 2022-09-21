@@ -1,0 +1,48 @@
+@import '../../assets/style';
+
+h1 {
+  margin-left: 40px;
+}
+
+.main-page {
+  max-width: 708px;
+  padding: 30px;
+  // background: #ECF5F5;
+  background: #FFF;
+  border-radius: 60px;
+
+  @media (max-width: 445px) {
+    background: transparent;
+  }
+}
+
+.main-page__wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+textarea {
+  padding: 22px 52px;
+  flex-grow: 1;
+  height: 380px;
+  border: none;
+  overflow: auto;
+  outline: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  resize: none;
+  background: #ECF5F5;
+  line-height: 160%;
+  border-radius: 40px;
+
+  & ::placeholder {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: #95AABB;
+  }
+}

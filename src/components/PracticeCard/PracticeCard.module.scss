@@ -1,0 +1,15 @@
+@import '../../assets/style';
+
+.practice-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 209px;
+  height: 44px;
+  background: #E0E8E8;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #4A4A4A;
+}

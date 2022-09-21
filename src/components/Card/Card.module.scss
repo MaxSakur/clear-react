@@ -1,0 +1,64 @@
+@import '../../assets/style';
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 310px;
+  height: 148px;
+  padding: 30px;
+  background: #B9CCDB;
+  border-radius: 40px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    box-shadow: 0px 6px 12px -10px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+  }
+
+  &:hover>.card-corner {
+    background: $practice-color;
+
+  }
+
+  @media (max-width: 445px) {
+    max-width: 250px;
+  }
+}
+
+.card-corner {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 0;
+  bottom: 0;
+  background: #95AABB;
+  border-radius: 40px 0px 40px;
+  transition: 0.2s;
+
+}
+
+input {
+  // all: unset;
+  outline: none;
+  width: 250px;
+  text-align: center;
+  border: none;
+  background: none;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  & ::placeholder {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: #95AABB;
+  }
+}
