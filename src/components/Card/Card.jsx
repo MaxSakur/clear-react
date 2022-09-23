@@ -10,11 +10,11 @@ export const Card = () => {
         <input
           type="text"
           className={styles['card-input']}
-          placeHolder='Add new word...' />
+          placeholder='Add new word...' />
       </div>
       <div className={styles['card-translate']}>
         {/* <div className={styles['card-corner']}></div> */}
-        <input type="text" className={styles['card-translate-input']} placeHolder='Add translate...' />
+        <input type="text" className={styles['card-translate-input']} placeholder='Add translate...' />
       </div>
     </div >
   )

@@ -6,6 +6,7 @@ export const Modal = ({ children, visible, setVisible }) => {
   // const rootClasses = ['modal']
   // if (visible) rootClasses.push('active')
 
+  // const modalActiveStyle = `${visible} ? ${style.modal} : ${style.modal}`
   return (
     <div className={style.modal}>
       <div className={style['modal-content']}>
