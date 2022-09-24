@@ -1,22 +1,26 @@
+import { Route, Routes } from 'react-router-dom';
 import MainContainer from './components/MainContainer';
+import { MainPage } from './components/MainPage/MainPage';
 
 import Menu from './components/Menu';
-import { MainPage } from './components/MainPage/MainPage';
-import { Modal } from './components/Modal/Modal';
-import { useWindowSize } from './hooks'
+import { Homepage, Notfoundpage, Practice } from './screens';
+
+// const { Homepage, Practice } = screens
 
 function App() {
-  const [width, height] = useWindowSize()
+
   return (
     <>
-      <div>width: {width} height: {height}</div>
-
-      {width < 1100 && width > 650 ? <Modal /> : null}
-
       <div className="App">
         <MainContainer>
           <Menu />
-          <MainPage />
+          <MainPage>
+            <Routes>
+              <Route path="/" element={<Homepage />} />
+              <Route path="/practice" element={<Practice />} />
+              <Route path="*" element={<Notfoundpage />} />
+            </Routes>
+          </MainPage>
         </MainContainer>
       </div>
     </>

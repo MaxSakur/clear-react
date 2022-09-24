@@ -1,15 +1,21 @@
 import React from 'react'
-import MainContainer from '../../components/MainContainer'
-import { MainPage } from '../../components/MainPage/MainPage'
-import Menu from '../../components/Menu'
+import PracticeLabel from '../../components/PracticeLabel/PracticeLabel'
+import PracticeCardsList from '../../components/PracticeCardsList'
+import TextArea from '../../components/TextArea'
+
 import styles from './Practice.module.scss'
 
 export const Practice = () => {
   return (
-    <MainContainer>
-      <Menu />
-      <MainPage />
-    </MainContainer>
-
+    <>
+      <div className={styles['practice__label']}>
+        <PracticeLabel />
+      </div>
+      <PracticeCardsList />
+      <div
+        className={styles['practice__wrapper']}>
+        <TextArea />
+      </div>
+    </>
   )
 }

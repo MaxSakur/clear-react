@@ -1,12 +1,14 @@
 * {
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 body {
   display: flex;
   justify-content: center;
-  background: linear-gradient(180deg, #EDF6F6 0%, #B0B6B6 100%) no-repeat;
-  height: 100vh;
+  background-color: #B0B6B6;
+  /* background: linear-gradient(180deg, #EDF6F6 0%, #B0B6B6 100%) no-repeat; */
+  /* height: 100%; */
   margin: 0 auto;
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;

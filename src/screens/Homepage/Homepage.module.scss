@@ -1,7 +1,7 @@
 @import '../../assets/style';
 
-.practice__label {
-  margin: 0 0 20px 40px;
+.home-page__label {
+  margin-left: 40px;
   font-weight: 700;
   font-size: 32px;
   transition: 0.2s;
@@ -10,4 +10,12 @@
   &:hover {
     color: $practice-hover-color;
   }
+}
+
+.home-page__wrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
 }

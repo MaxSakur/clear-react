@@ -3,12 +3,10 @@
 .menu-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 35px;
   align-items: center;
-  margin: 32px 0;
+  gap: 35px;
 
   @media (max-width: 650px) {
     display: none;
   }
-
 }

@@ -2,15 +2,15 @@ import React from 'react'
 import { Card } from '../Card/Card'
 import styles from './CardsList.module.scss'
 
-export const CardsList = () => {
+import { cardsData } from '../../data'
+
+export const CardsList = ({ categoryID }) => {
+  console.log(categoryID);
   return (
     <>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      {cardsData.filter(card =>
+        card.categoryID === categoryID).map(card =>
+          (<Card key={card.id} value={card} />))}
     </>
   )
 }

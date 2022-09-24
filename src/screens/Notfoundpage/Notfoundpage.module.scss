@@ -1,0 +1,16 @@
+@import '../../assets/style';
+
+.page-not-found {
+  width: 350px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-not-found__title {
+  font-weight: 700;
+  font-size: 32px;
+  transition: 0.2s;
+  color: $back-color;
+}
