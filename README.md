@@ -5,6 +5,8 @@
 <br>
 <br>
 
+<center>Centered text</center>
+
 ### `Categories`
 You can create categories with your card list.
 <br>
