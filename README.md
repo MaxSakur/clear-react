@@ -19,7 +19,5 @@ Write a few sentences with the studied words for better memorization.
 
 This project was created with <strong>React</strong>.
 
-<br>
-
 ### `Author’s portfolio`
 Other work [Bogdan Shulika](https://bodik87.github.io/index.html).
