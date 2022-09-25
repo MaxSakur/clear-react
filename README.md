@@ -12,6 +12,7 @@ You can create categories with your card list.
 
 ### `Practice!`
 Write a few sentences with the studied words for better memorization.
+<br>
 
 <p align="center"> <img src="https://github.com/bodik87/clear-react/blob/develop/src/assets/images/Practice.png"/> </р>
 <br>
