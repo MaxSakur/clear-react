@@ -1,7 +1,5 @@
 <h1 align="center"> CARDS </h1>
 <h3 align="center"> <b> Cards for memorizing foreign words </b> </h3>
-<br>
-<br>
 
 <p align="center"> <img src="https://github.com/bodik87/clear-react/blob/develop/src/assets/images/Cards.png"/> </р>
 <br>
@@ -14,8 +12,6 @@ You can create categories with your card list.
 
 ### `Practice!`
 Write a few sentences with the studied words for better memorization.
-<br>
-<br>
 
 <p align="center"> <img src="https://github.com/bodik87/clear-react/blob/develop/src/assets/images/Practice.png"/> </р>
 <br>
