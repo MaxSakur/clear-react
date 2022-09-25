@@ -1,21 +1,29 @@
 <h1 align="center"> CARDS </h1>
-
-<p align="center"> <img src="https://github.com/vinceliuice/WhiteSur-gtk-theme/blob/pictures/pictures/macbook.png"/> </p>
-
+<h3 align="center"> <b> Cards for memorizing foreign words </b> </h3>
 <br>
-<p align="center"> <b> A macOS BigSur-like theme for your GTK apps </b> </p>
 <br>
 
-# Getting Started with Create React App
+<p align="center"> <img src="https://github.com/bodik87/clear-react/blob/develop/src/assets/images/Cards.png"/> </р>
+<br>
+<br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### `Categories`
+You can create categories with your card list.
+<br>
+<br>
 
-## Available Scripts
+### `Practice!`
+Write a few sentences with the studied words for better memorization.
+<br>
+<br>
 
-In the project directory, you can run:
+<p align="center"> <img src="https://github.com/bodik87/clear-react/blob/develop/src/assets/images/Practice.png"/> </р>
+<br>
+<br>
 
-### `npm start`
+This project was created with <strong>React</strong>.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br>
 
+### `Author’s portfolio`
+Other work [Bogdan Shulika](https://bodik87.github.io/index.html).
