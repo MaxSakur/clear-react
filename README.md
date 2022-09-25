@@ -1,5 +1,5 @@
 <h1 align="center"> CARDS </h1>
-<h2 align="center"> <b> Cards for memorizing foreign words </b> </h2>
+<p align="center"> <b> Cards for memorizing foreign words </b> </p>
 
 <p align="center"> <img src="https://github.com/bodik87/clear-react/blob/develop/src/assets/images/Cards.png"/> </р>
 <br>
