@@ -4,8 +4,18 @@ import Menu from "./components/Menu";
 import { MainPage } from "./components/MainPage/MainPage";
 import { Modal } from "./components/Modal/Modal";
 import { useWindowSize } from "./hooks";
+import { useEffect, useState } from "react";
+import { api } from "./api";
 
 function App() {
+  const [data, changeData] = useState([]);
+
+  useEffect(() => {
+    api.getPosts().then((res) => {
+      changeData(res);
+    });
+  }, []);
+
   const [width, height] = useWindowSize();
   return (
     <>
