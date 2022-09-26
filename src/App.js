@@ -6,9 +6,12 @@ import { Modal } from "./components/Modal/Modal";
 import { useWindowSize } from "./hooks";
 import { useEffect, useState } from "react";
 import { api } from "./api";
+import { useDispatch } from "react-redux";
+import { updateCategoriesAC } from "./store/reducers/categoryReducer";
 
 function App() {
-  const [data, changeData] = useState([]);
+  const dispatch = useDispatch()
+  // const [data, changeData] = useState([]);
 
   // useEffect(() => {
   //   api.getPosts().then((res) => {
@@ -16,12 +19,11 @@ function App() {
   //   });
   // }, []);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    changeData(api.getCategories());
+    const data = api.getCategories()
+    dispatch(updateCategoriesAC(data))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  console.log(data);
 
   const [width, height] = useWindowSize();
   return (

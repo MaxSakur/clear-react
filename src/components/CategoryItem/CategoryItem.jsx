@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './CategoryItem.module.scss'
 
-export const CategoryItem = () => {
+export const CategoryItem = ({ name }) => {
   return (
-    <div className={styles['categoryItem']}>Category</div>
+    <button className={styles['categoryItem']}>{name}</button>
   )
 }

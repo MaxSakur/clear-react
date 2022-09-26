@@ -16,7 +16,7 @@ export const MainPage = () => {
       }
 
       <div className={style['main-page__wrapper']}>
-        {width > 1200
+        {width > 2000
           ?
           <>
             <PracticeCardsList />

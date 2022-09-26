@@ -9,16 +9,14 @@ import downArrow from "../../assets/images/downArrow.svg";
 import { ADD_NEW_CATEGORY } from "../../assets/constants";
 
 export const CategoryList = () => {
-  // const testStore = useSelector(store => store)
-  // console.log(testStore);
+  const categoryList = useSelector(store => store.categoryList.categories)
   return (
     <div className={styles["category-list"]}>
       <img className={styles["arrow"]} src={upArrow} alt="upArrow" />
-      <CategoryItem />
-      <CategoryItem />
-      <CategoryItem />
-      <CategoryItem />
-      <CategoryItem />
+      {categoryList.map((category, index) => <CategoryItem
+        key={index + category.id}
+        name={category.name}
+      />)}
       <img className={styles["arrow"]} src={downArrow} alt="downArrow" />
       <div className={styles["menu-addBtn"]}>{ADD_NEW_CATEGORY}</div>
     </div>

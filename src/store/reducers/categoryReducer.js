@@ -2,6 +2,7 @@ export const UPDATE_CATEGORIES = 'UPDATE_CATEGORIES';
 
 const defaultState = {
   categories: [],
+  activeCategoryIndex: 0
 }
 
 function categoryReducer(state = defaultState, action) {
