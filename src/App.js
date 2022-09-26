@@ -10,11 +10,18 @@ import { api } from "./api";
 function App() {
   const [data, changeData] = useState([]);
 
+  // useEffect(() => {
+  //   api.getPosts().then((res) => {
+  //     changeData(res);
+  //   });
+  // }, []);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    api.getPosts().then((res) => {
-      changeData(res);
-    });
+    changeData(api.getCategories());
   }, []);
+
+  console.log(data);
 
   const [width, height] = useWindowSize();
   return (
