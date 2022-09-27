@@ -8,7 +8,8 @@ export const Card = ({ title }) => {
   const [translateValue, setTranslateValue] = useState('')
 
   return (
-    <div className={styles['wrapper']}>
+    <div
+      className={styles['wrapper']}>
       <div className={styles['card-corner']}></div>
       <div className={styles['card']}>
         {/* <div className={styles['card-corner']}></div> */}

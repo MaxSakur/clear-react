@@ -4,6 +4,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 180px;
+}
+
+.category-list__overflow {
+  width: 100%;
+  background-color: antiquewhite;
+  height: 328px;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+}
+
+.category-list__wrapper {
+  top: 0px;
+  position: absolute;
+  width: 100%;
 }
 
 .menu-addBtn {

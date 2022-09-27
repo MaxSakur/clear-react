@@ -1,32 +1,47 @@
 @import '../../assets/style';
 
-.categoryItem {
-  margin: 10px 0;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 19px;
-  color: #000000;
+.input__wrapper {
+  display: flex;
+  justify-content: center;
   cursor: pointer;
-  width: 142px;
-  text-align: center;
-  line-height: 44px;
+  margin-bottom: 7px;
+  padding: 20px 15px;
+  width: 100%;
+  background: #ECF5F5;
   border-radius: 50px;
   transition: background 0.3s;
 
-  &:hover {
-    color: #fff;
+  &_active {
+    @extend .input__wrapper;
     background: #5198AE;
+    color: #fff;
+  }
+
+  &:hover {
+    background: $main-card-corner;
   }
 }
 
-.categoryItemActive {
-  text-align: center;
-  cursor: pointer;
+.category-input {
   font-weight: 700;
   font-size: 16px;
-  line-height: 44px;
-  color: #fff;
-  width: 142px;
-  background: #5198AE;
-  border-radius: 50px;
+  background: transparent;
+  border: none;
+  color: #000000;
+  width: 50%;
+  text-align: center;
+  transition: background 0.3s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &_active {
+    @extend .category-input;
+    color: #fff;
+  }
+
+  &:focus,
+  input:focus {
+    outline: none;
+  }
 }

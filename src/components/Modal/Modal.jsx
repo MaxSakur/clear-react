@@ -11,12 +11,13 @@ export const Modal = ({ children, visible, setVisible }) => {
     <div className={style.modal}>
       <div className={style['modal-content']}>
         <input
+          className={style['modal-input']}
           type="text"
           placeholder='Enter the category name...'
         />
         <div>
-          <button>Close</button>
-          <button>Ok</button>
+          <button className={style['modal-btn']}>Close</button>
+          <button className={style['modal-btn']}>Ok</button>
         </div>
       </div>
     </div>

@@ -1,9 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { useWindowSize } from '../../hooks'
 import CardsList from '../CardsList'
-import PracticeCardsList from '../PracticeCardsList'
-import { PracticeLabel } from '../UI'
 
 import style from './MainPage.module.scss'
 

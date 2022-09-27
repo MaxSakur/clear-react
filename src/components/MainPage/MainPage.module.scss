@@ -1,15 +1,11 @@
 @import '../../assets/style';
 
-h1 {
-  margin-left: 40px;
-}
-
 .main-page {
-  max-width: 708px;
-  padding: 0 30px;
-  // background: #ECF5F5;
-  background: #FFF;
+  max-width: 750px;
+  padding: 50px 30px;
+  background: #ECF5F5;
   border-radius: 60px;
+  height: 100%;
 
   &__title {
     margin-left: 25px;
