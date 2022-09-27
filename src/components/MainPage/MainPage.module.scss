@@ -6,10 +6,18 @@ h1 {
 
 .main-page {
   max-width: 708px;
-  padding: 30px;
+  padding: 0 30px;
   // background: #ECF5F5;
   background: #FFF;
   border-radius: 60px;
+
+  &__title {
+    margin-left: 25px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    transition: 0.2s;
+  }
 
   @media (max-width: 445px) {
     background: transparent;
@@ -17,6 +25,7 @@ h1 {
 }
 
 .main-page__wrapper {
+  margin-top: 25px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

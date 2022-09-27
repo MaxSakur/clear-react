@@ -2,7 +2,8 @@ import React from 'react'
 import { useWindowSize } from '../../hooks'
 import CardsList from '../CardsList'
 import PracticeCardsList from '../PracticeCardsList'
-import PracticeLabel from '../PracticeLabel/PracticeLabel'
+import { PracticeLabel } from '../UI'
+
 import style from './MainPage.module.scss'
 
 
@@ -10,9 +11,9 @@ export const MainPage = () => {
   const [width, height] = useWindowSize()
   return (
     <div className={style['main-page']}>
-      {width > 1200
+      {width > 1800
         ? <PracticeLabel style={{ 'marginLeft': '40px', 'marginBottom': '20px' }} />
-        : <h1>MainPage</h1>
+        : <div className={style['main-page__title']}>MainPage</div>
       }
 
       <div className={style['main-page__wrapper']}>

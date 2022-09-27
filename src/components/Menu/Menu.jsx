@@ -2,9 +2,7 @@ import React from 'react'
 import styles from './Menu.module.scss'
 
 import { CategoryList } from '../CategoryList/CategoryList'
-import Logo from '../Logo/Logo'
-import Back from '../Back/Back'
-import PracticeLabel from '../PracticeLabel/PracticeLabel'
+import { Back, Logo, PracticeLabel } from '../UI'
 
 
 

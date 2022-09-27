@@ -1,0 +1,20 @@
+@import '../../../assets/style';
+
+.back {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.back-title {
+  margin-left: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 29px;
+  color: $back-color;
+  transition: 0.2s;
+
+  &:hover {
+    color: $back-hover-color;
+  }
+}
