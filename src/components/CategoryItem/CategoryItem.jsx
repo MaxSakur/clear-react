@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updateActiveCategoryAC } from '../../store/reducers/categoryReducer';
 import styles from './CategoryItem.module.scss'
 
-export const CategoryItem = ({ name, index }) => {
+export const CategoryItem = ({ name, index, start }) => {
 
   const [categoryName, setCategoryName] = useState(name)
   const actuallyIndex = useSelector(state => state.categoryList.activeCategoryIndex)
@@ -13,7 +13,10 @@ export const CategoryItem = ({ name, index }) => {
   const dispatch = useDispatch()
   const changeActiveCategory = (i) => {
     dispatch(updateActiveCategoryAC(i))
+
   }
+
+  console.log(start, actuallyIndex)
 
   return (
     <div
