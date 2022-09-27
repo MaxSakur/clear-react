@@ -6,8 +6,9 @@ import { Modal } from "./components/Modal/Modal";
 import { useWindowSize } from "./hooks";
 import { useEffect, useState } from "react";
 import { api } from "./api";
-import { useDispatch } from "react-redux";
-import { updateCategoriesAC } from "./store/reducers/categoryReducer";
+import { useDispatch, useSelector } from "react-redux";
+import { updateActiveCategoryAC, updateCategoriesAC } from "./store/reducers/categoryReducer";
+import { useCallback } from "react";
 
 function App() {
   const dispatch = useDispatch()
@@ -25,6 +26,7 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+
   const [width, height] = useWindowSize();
   return (
     <>
@@ -32,7 +34,7 @@ function App() {
         width: {width} height: {height}
       </div>
 
-      {width < 1200 && width > 650 ? <Modal /> : null}
+      {width < 450 && width > 350 ? <Modal /> : null}
 
       <div className="App">
         <MainContainer>
