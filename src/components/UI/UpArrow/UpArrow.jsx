@@ -1,13 +1,13 @@
 import * as React from "react"
 import styles from './UpArrow.module.scss'
 
-const UpArrow = ({ inc }) => (
+const UpArrow = ({ dec }) => (
   <svg className={styles["up-arrow"]}
     width={42}
     height={11}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    onClick={inc}
+    onClick={dec}
   >
     <path
       d="M.647 8.368a2.5 2.5 0 0 1 1.768-3.062L20.183.545a2.105 2.105 0 0 1 2.578 1.489 2.895 2.895 0 0 1-2.047 3.545L3.71 10.135A2.5 2.5 0 0 1 .647 8.368Z"

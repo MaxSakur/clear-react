@@ -1,66 +1,74 @@
 import React from "react";
-import CategoryItem from "../CategoryItem";
+import { useState } from "react";
 import { useSelector } from "react-redux";
-import styles from "./CategoryList.module.scss";
+import CategoryItem from "../CategoryItem";
+import Modal from "../Modal";
 import { ADD_NEW_CATEGORY } from "../../assets/constants";
 import { UpArrow, DownArrow } from "../UI";
-import { useState } from "react";
+import styles from "./CategoryList.module.scss";
 
 export const CategoryList = () => {
 
   const [startArray, setStartArray] = useState(0)
-  const [endArray, setEndArray] = useState(5)
-
   const categoryList = useSelector(store => store.categoryList.categories)
-  const filteredCategotyList = categoryList.slice(startArray, endArray)
+  const filteredCategotyList = categoryList.slice(startArray)
 
-
+  // Slice filteredCategotyList
   const incrementIndexArray = () => {
-    if (filteredCategotyList.length < 5) return
-    else {
-      setStartArray(prev => prev + 1)
-      setEndArray(prev => prev + 1)
-    }
+    setStartArray(prev => prev + 1)
   }
 
   const decrementIndexArray = () => {
     setStartArray(prev => prev - 1)
-    setEndArray(prev => prev - 1)
+  }
+
+  // Modal view
+  const [modalView, setModalView] = useState(false)
+  const changeModalView = () => {
+    setModalView(prev => !prev)
   }
 
   return (
-    <div className={styles["category-list"]}>
-      {
-        filteredCategotyList.length >= 5
-          ?
-          <UpArrow
-            inc={incrementIndexArray}
-          />
-          :
-          null
-      }
-      <div className={styles["category-list__overflow"]}>
-        <div className={styles["category-list__wrapper"]}>
-          {filteredCategotyList.map((category, index) =>
-            <CategoryItem
-              key={index + category.id}
-              name={category.name}
-              index={category.id}
-              start={startArray}
+    <>
+      {modalView ? <Modal close={changeModalView} /> : null}
+      <div className={styles["category-list"]}>
+        {
+          filteredCategotyList[0] === undefined ||
+            filteredCategotyList[0].id === 0
+            ?
+            null
+            :
+            <UpArrow
+              dec={decrementIndexArray}
             />
-          )}
+        }
+        <div className={styles["category-list__overflow"]}>
+          <div className={styles["category-list__wrapper"]}>
+            {filteredCategotyList.map((category, index) =>
+              <CategoryItem
+                key={index + category.id}
+                name={category.name}
+                index={category.id}
+              />
+            )}
+          </div>
+        </div>
+        {
+          filteredCategotyList.length > 5
+            ?
+            <DownArrow
+              inc={incrementIndexArray}
+            />
+            : null
+        }
+        <div
+          onClick={() => { changeModalView() }}
+          className={styles["menu-addBtn"]}>{ADD_NEW_CATEGORY}
         </div>
       </div>
-      {
-        filteredCategotyList[0] === undefined || filteredCategotyList[0].id === 0
-          ?
-          null
-          :
-          <DownArrow
-            dec={decrementIndexArray}
-          />
-      }
-      <div className={styles["menu-addBtn"]}>{ADD_NEW_CATEGORY}</div>
-    </div>
+    </>
   );
 };
+
+// Почему без filteredCategotyList[0] === undefined при вервом рендере ломается приложение ???
+// Обработать случай отображения, если массив пустой

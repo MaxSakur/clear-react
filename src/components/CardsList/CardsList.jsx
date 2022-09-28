@@ -1,15 +1,11 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 import { Card } from '../Card/Card'
 import styles from './CardsList.module.scss'
 
-export const CardsList = () => {
+export const CardsList = ({ wordsArray, activeCards }) => {
 
-  const categoryList = useSelector(store => store.categoryList.categories)
-  const activeCards = useSelector(store => store.categoryList.activeCategoryIndex)
-
-  const wordsArray = categoryList.map((cat) => cat.data)
-
+  console.log(wordsArray[9]);
+  console.log(activeCards);
   return (
     <>
       {wordsArray[activeCards] !== undefined ?

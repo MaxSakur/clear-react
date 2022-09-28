@@ -10,6 +10,9 @@ export const MainPage = () => {
   const activeCards = useSelector(store => store.categoryList.activeCategoryIndex)
 
   const title = categoryList.map((cat) => cat.name)
+  const wordsArray = categoryList.map((cat) => cat.data)
+
+  console.log(activeCards);
 
   return (
     <div className={style['main-page']}>
@@ -17,10 +20,8 @@ export const MainPage = () => {
         {title[activeCards] !== undefined ? title[activeCards] : title[0]}
       </div>
       <div className={style['main-page__wrapper']}>
-        <CardsList />
+        <CardsList wordsArray={wordsArray} activeCards={activeCards} />
       </div>
-
     </div>
-
   )
 }

@@ -1,8 +1,8 @@
 import React from 'react'
-import styles from './Menu.module.scss'
-
-import { CategoryList } from '../CategoryList/CategoryList'
+import CategoryList from '../CategoryList'
 import { Back, Logo, PracticeLabel } from '../UI'
+
+import styles from './Menu.module.scss'
 
 export const Menu = () => {
   return (
