@@ -6,11 +6,15 @@ import Modal from "../Modal";
 import { ADD_NEW_CATEGORY } from "../../assets/constants";
 import { UpArrow, DownArrow } from "../UI";
 import styles from "./CategoryList.module.scss";
+import UpArrowDisabled from "../UI/UpArrowDisabled";
+import DownArrowDisabled from "../UI/DownArrowDisabled/DownArrowDisabled";
 
 export const CategoryList = () => {
 
   const [startArray, setStartArray] = useState(0)
+
   const categoryList = useSelector(store => store.categoryList.categories)
+  // не уверен за этот подход из-за производительности тк меняем индексы у всех элементов массива
   const filteredCategotyList = categoryList.slice(startArray)
 
   // Slice filteredCategotyList
@@ -36,7 +40,7 @@ export const CategoryList = () => {
           filteredCategotyList[0] === undefined ||
             filteredCategotyList[0].id === 0
             ?
-            null
+            <UpArrowDisabled />
             :
             <UpArrow
               dec={decrementIndexArray}
@@ -59,7 +63,7 @@ export const CategoryList = () => {
             <DownArrow
               inc={incrementIndexArray}
             />
-            : null
+            : <DownArrowDisabled />
         }
         <div
           onClick={() => { changeModalView() }}

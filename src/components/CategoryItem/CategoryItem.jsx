@@ -11,6 +11,7 @@ export const CategoryItem = ({ name, index }) => {
   const changCategoryName = e => setCategoryName(e.target.value)
 
   const dispatch = useDispatch()
+
   const changeActiveCategory = (i) => {
     dispatch(updateActiveCategoryAC(i))
   }

@@ -7,23 +7,21 @@ import style from './Modal.module.scss'
 export const Modal = ({ close }) => {
 
   const categoryList = useSelector(store => store.categoryList.categories)
-  const updatedCategotyList = categoryList
-
   const [inputText, setInputText] = useState('')
 
+  // Adding a new category
   const addNewCategory = (title) => {
-    updatedCategotyList.push(
+    categoryList.push(
       {
-        id: updatedCategotyList.length,
+        id: categoryList.length,
         name: title,
         data: ["", "", "", "", "", ""],
       }
     );
-    const localCategoryList = JSON.stringify(updatedCategotyList)
+    const localCategoryList = JSON.stringify(categoryList)
     localStorage.setItem('localCategoryList', localCategoryList)
     setInputText('');
     close();
-    // console.log(categoryList);
   }
 
 

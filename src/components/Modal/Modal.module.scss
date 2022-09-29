@@ -18,7 +18,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  padding: 40px;
+  padding: 40px 40px 20px 40px;
   background: white;
   border-radius: 40px;
   min-width: 300px;
@@ -52,7 +52,7 @@
   border-radius: 15px;
   padding: 10px 30px;
   background: $practice-card-color;
-  margin: 20px 0 0 10px;
+  margin: 25px 0 0 10px;
   font-weight: 700;
   font-size: 12px;
   cursor: pointer;

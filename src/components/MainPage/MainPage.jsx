@@ -12,8 +12,6 @@ export const MainPage = () => {
   const title = categoryList.map((cat) => cat.name)
   const wordsArray = categoryList.map((cat) => cat.data)
 
-  console.log(activeCards);
-
   return (
     <div className={style['main-page']}>
       <div className={style['main-page__title']}>

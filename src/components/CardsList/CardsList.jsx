@@ -4,8 +4,6 @@ import styles from './CardsList.module.scss'
 
 export const CardsList = ({ wordsArray, activeCards }) => {
 
-  console.log(wordsArray[9]);
-  console.log(activeCards);
   return (
     <>
       {wordsArray[activeCards] !== undefined ?
