@@ -7,23 +7,8 @@
   perspective: 1000px;
 }
 
-.wrapper:hover .card {
-  transform: rotateY(180deg);
-}
-
-.wrapper:hover .card-translate {
-  box-shadow: 0px 6px 22px -10px rgba(0, 0, 0, 0.3);
-  transform: rotateY(360deg);
-}
-
-.wrapper:hover .card-corner {
-  transform: scale(.2) translateX(-20px);
-  opacity: 0;
-}
-
 .card,
 .card-translate {
-  cursor: pointer;
   position: absolute;
   top: 0;
   height: 100%;
@@ -36,26 +21,46 @@
   transition: 1s;
 }
 
-.card-corner {
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  right: 15px;
-  bottom: 15px;
-  background: #95AABB;
-  border-radius: 50%;
-  transition: 0.5s;
-  z-index: 1;
-}
-
-
 .card {
-  background: #B9CCDB;
+  background: $main-card-color;
+
+  &_active {
+    @extend .card;
+    transform: rotateY(180deg);
+  }
 }
 
 .card-translate {
   background: $practice-card-color;
   transform: rotateY(180deg);
+
+  &_active {
+    @extend .card-translate;
+    box-shadow: 0px 6px 22px -10px rgba(0, 0, 0, 0.3);
+    transform: rotateY(360deg);
+  }
+}
+
+.card-corner {
+  cursor: pointer;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: 15px;
+  bottom: 15px;
+  background: $main-card-corner;
+  border-radius: 50%;
+  transition: 0.3s;
+  z-index: 1;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &_active {
+    @extend .card-corner;
+    background: $practice-color;
+  }
 }
 
 .card-input,
@@ -78,7 +83,7 @@
     font-weight: 700;
     font-size: 20px;
     line-height: 29px;
-    color: #95AABB;
+    color: $main-card-corner;
   }
 }
 

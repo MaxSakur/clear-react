@@ -6,12 +6,21 @@ export const Card = ({ title }) => {
 
   const [wordValue, setWordValue] = useState(title)
   const [translateValue, setTranslateValue] = useState('')
+  const [frontCardSide, setFrontCardSide] = useState(true)
+
+  const changeFrontCardSide = () => {
+    setFrontCardSide(prev => !prev)
+  }
+
+  console.log(frontCardSide);
 
   return (
     <div
       className={styles['wrapper']}>
-      <div className={styles['card-corner']}></div>
-      <div className={styles['card']}>
+      <div
+        onClick={() => { changeFrontCardSide(frontCardSide) }}
+        className={styles[frontCardSide ? 'card-corner' : 'card-corner_active']}></div>
+      <div className={styles[frontCardSide ? 'card' : 'card_active']}>
         {/* <div className={styles['card-corner']}></div> */}
         <input
           type="text"
@@ -20,7 +29,7 @@ export const Card = ({ title }) => {
           className={styles['card-input']}
           placeholder='Add new word...' />
       </div>
-      <div className={styles['card-translate']}>
+      <div className={styles[frontCardSide ? 'card-translate' : 'card-translate_active']}>
         {/* <div className={styles['card-corner']}></div> */}
         <input
           type="text"

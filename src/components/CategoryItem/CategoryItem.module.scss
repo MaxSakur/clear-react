@@ -7,18 +7,23 @@
   margin-bottom: 7px;
   padding: 20px 15px;
   width: 100%;
-  background: #ECF5F5;
+  background: $primary-color;
   border-radius: 50px;
   transition: background 0.3s;
 
-  &_active {
-    @extend .input__wrapper;
-    background: #5198AE;
-    color: #fff;
-  }
-
   &:hover {
     background: $main-card-corner;
+  }
+
+  &_active {
+    @extend .input__wrapper;
+    background: $menu-main-color;
+    color: $white-color;
+
+    &:hover {
+      cursor: auto;
+      background: $menu-main-color;
+    }
   }
 }
 
@@ -27,7 +32,7 @@
   font-size: 16px;
   background: transparent;
   border: none;
-  color: #000000;
+  color: $black-color;
   width: 50%;
   text-align: center;
   transition: background 0.3s;
@@ -37,7 +42,7 @@
 
   &_active {
     @extend .category-input;
-    color: #fff;
+    color: $white-color;
   }
 
   &:focus,

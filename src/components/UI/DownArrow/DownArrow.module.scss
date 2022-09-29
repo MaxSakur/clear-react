@@ -3,4 +3,9 @@
 .down-arrow {
   margin-top: 15px;
   cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
