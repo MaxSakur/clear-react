@@ -5,8 +5,4 @@
   flex-direction: column;
   gap: 35px;
   align-items: center;
-
-  @media (max-width: 650px) {
-    display: none;
-  }
 }

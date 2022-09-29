@@ -1,11 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { useWindowSize } from "./hooks";
 import { updateCategoriesAC } from "./store/reducers/categoryReducer";
 import MainContainer from "./components/MainContainer";
 import Menu from "./components/Menu";
 import MainPage from "./components/MainPage";
 import { api } from "./api";
-import { useWindowSize } from "./hooks";
+import { Back, Logo, PracticeLabel } from "./components/UI";
+import CategoryList from "./components/CategoryList";
 
 function App() {
   const dispatch = useDispatch()
@@ -27,19 +29,24 @@ function App() {
   }, []);
 
   const [width, height] = useWindowSize();
-  return (
-    <>
-      <div>
-        width: {width} height: {height}
-      </div>
 
-      <div className="App">
-        <MainContainer>
-          <Menu />
-          <MainPage />
-        </MainContainer>
-      </div>
-    </>
+  return (
+    <div className="App">
+      <MainContainer>
+        {
+          width > 992
+            ?
+            <Menu>
+              <Logo />
+              <CategoryList />
+              <PracticeLabel />
+              <Back />
+            </Menu>
+            : null
+        }
+        <MainPage width={width} />
+      </MainContainer>
+    </div>
   );
 }
 

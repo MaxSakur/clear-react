@@ -9,7 +9,6 @@
 
 .category-list__overflow {
   width: 100%;
-  // background-color: antiquewhite;
   height: 328px;
   border-radius: 30px;
   overflow: hidden;
@@ -27,6 +26,6 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
-  color: #5198AE;
+  color: $main-card-corner;
   cursor: pointer;
 }

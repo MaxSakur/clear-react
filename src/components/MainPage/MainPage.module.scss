@@ -3,9 +3,29 @@
 .main-page {
   max-width: 750px;
   padding: 50px 30px;
-  background: #ECF5F5;
+  background: $primary-color;
   border-radius: 60px;
   height: 100%;
+  position: relative;
+
+  &__wrapper {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  &__burger {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 100px 25px 25px;
+  }
 
   &__title {
     margin-left: 25px;
@@ -15,17 +35,24 @@
     transition: 0.2s;
   }
 
+  @media (max-width: 992px) {
+    padding: 90px 25px 0 25px;
+  }
+
   @media (max-width: 445px) {
     background: transparent;
   }
 }
 
-.main-page__wrapper {
-  margin-top: 25px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 25px;
+.burger-wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  padding-top: 70px;
+  top: 0px;
+  left: 0;
+  z-index: 1;
 }
 
 textarea {
@@ -40,7 +67,7 @@ textarea {
   font-weight: 400;
   font-size: 24px;
   resize: none;
-  background: #ECF5F5;
+  background: $primary-color;
   line-height: 160%;
   border-radius: 40px;
 
@@ -48,6 +75,6 @@ textarea {
     font-weight: 700;
     font-size: 24px;
     line-height: 29px;
-    color: #95AABB;
+    color: $main-card-corner;
   }
 }

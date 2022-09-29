@@ -4,10 +4,9 @@ import { useSelector } from "react-redux";
 import CategoryItem from "../CategoryItem";
 import Modal from "../Modal";
 import { ADD_NEW_CATEGORY } from "../../assets/constants";
-import { UpArrow, DownArrow } from "../UI";
+import { UpArrow, DownArrow, UpArrowDisabled, DownArrowDisabled } from "../UI";
 import styles from "./CategoryList.module.scss";
-import UpArrowDisabled from "../UI/UpArrowDisabled";
-import DownArrowDisabled from "../UI/DownArrowDisabled/DownArrowDisabled";
+
 
 export const CategoryList = () => {
 
