@@ -12,8 +12,6 @@ export const Card = ({ title }) => {
     setFrontCardSide(prev => !prev)
   }
 
-  console.log(frontCardSide);
-
   return (
     <div
       className={styles['wrapper']}>
