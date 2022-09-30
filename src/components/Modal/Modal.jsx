@@ -9,28 +9,34 @@ export const Modal = ({ close }) => {
   const categoryList = useSelector(store => store.categoryList.categories)
   const [inputText, setInputText] = useState('')
 
+  // const test = [...categoryList,] доделать
+
   // Adding a new category
   const addNewCategory = (title) => {
     categoryList.push(
       {
         id: categoryList.length,
         name: title,
-        data: ["", "", "", "", "", ""],
+        data: new Array(6).fill('')
       }
     );
+    // вынести в отдельную функцию
     const localCategoryList = JSON.stringify(categoryList)
     localStorage.setItem('localCategoryList', localCategoryList)
     setInputText('');
     close();
   }
 
+  const avoidEmptyClick = (e) => {
+    e.stopPropagation()
+  }
 
   return (
     <div
       onClick={() => close()}
       className={style.modal}>
       <div
-        onClick={(e) => e.stopPropagation()}
+        onClick={avoidEmptyClick}
         className={style['modal-content']}>
         <input
           className={style['modai-input']}

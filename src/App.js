@@ -30,6 +30,7 @@ function App() {
 
   const [width, height] = useWindowSize();
 
+  console.log(dispatch);
   return (
     <div className="App">
       <MainContainer>

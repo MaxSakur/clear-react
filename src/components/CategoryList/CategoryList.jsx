@@ -31,22 +31,18 @@ export const CategoryList = () => {
     setModalView(prev => !prev)
   }
 
+  const upArrowConditions = filteredCategotyList[0] && filteredCategotyList[0].id === 0
+
   return (
     <>
       {modalView ? <Modal close={changeModalView} /> : null}
-      <div className={styles["category-list"]}>
-        {
-          filteredCategotyList[0] === undefined ||
-            filteredCategotyList[0].id === 0
-            ?
-            <UpArrowDisabled />
-            :
-            <UpArrow
-              dec={decrementIndexArray}
-            />
-        }
-        <div className={styles["category-list__overflow"]}>
-          <div className={styles["category-list__wrapper"]}>
+      <div className={styles["categoryList"]}>
+        <UpArrow
+          color={upArrowConditions ? 'transparent' : '#95AABB'}
+          onClick={decrementIndexArray}
+        />
+        <div className={styles.categoryList_overflow}>
+          <div className={styles.categoryList_wrapper}>
             {filteredCategotyList.map((category, index) =>
               <CategoryItem
                 key={index + category.id}
