@@ -35,7 +35,7 @@ export const CategoryList = () => {
 
   return (
     <>
-      {modalView ? <Modal close={changeModalView} /> : null}
+      {modalView ? <Modal closeModal={changeModalView} /> : null}
       <div className={styles["categoryList"]}>
         <UpArrow
           color={upArrowConditions ? 'transparent' : '#95AABB'}
@@ -56,7 +56,7 @@ export const CategoryList = () => {
           filteredCategotyList.length > 5
             ?
             <DownArrow
-              inc={incrementIndexArray}
+              onClick={incrementIndexArray}
             />
             : <DownArrowDisabled />
         }

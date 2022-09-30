@@ -1,30 +1,40 @@
 import React from 'react'
 import { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { ADD, CLOSE, MODAL_INPUT_PLACEHOLDER } from '../../assets/constants'
+import { updateCategoriesAC } from '../../store/reducers/categoryReducer'
 import style from './Modal.module.scss'
 
-export const Modal = ({ close }) => {
+export const Modal = ({ closeModal }) => {
+
+  const dispatch = useDispatch()
 
   const categoryList = useSelector(store => store.categoryList.categories)
   const [inputText, setInputText] = useState('')
 
-  // const test = [...categoryList,] доделать
+  const addToLocalStorage = (data) => {
+    const localCategoryList = JSON.stringify(data)
+    localStorage.setItem('localCategoryList', localCategoryList)
+  }
 
   // Adding a new category
   const addNewCategory = (title) => {
-    categoryList.push(
-      {
-        id: categoryList.length,
-        name: title,
-        data: new Array(6).fill('')
-      }
-    );
-    // вынести в отдельную функцию
-    const localCategoryList = JSON.stringify(categoryList)
-    localStorage.setItem('localCategoryList', localCategoryList)
-    setInputText('');
-    close();
+    const newCategory = {
+      id: categoryList.length,
+      name: title.trim(),
+      data: new Array(6).fill('')
+    }
+    if (title.trim().length > 0) {
+      const updatedCategoryList = [...categoryList, newCategory]
+      dispatch(updateCategoriesAC(updatedCategoryList))
+      addToLocalStorage(updatedCategoryList)
+      setInputText('');
+      closeModal();
+    }
+    else {
+      closeModal();
+      return
+    }
   }
 
   const avoidEmptyClick = (e) => {
@@ -33,7 +43,7 @@ export const Modal = ({ close }) => {
 
   return (
     <div
-      onClick={() => close()}
+      onClick={closeModal}
       className={style.modal}>
       <div
         onClick={avoidEmptyClick}
@@ -47,7 +57,7 @@ export const Modal = ({ close }) => {
         />
         <div>
           <button
-            onClick={() => { close() }}
+            onClick={closeModal}
             className={style['modal-btn']}>{CLOSE}
           </button>
           <button
