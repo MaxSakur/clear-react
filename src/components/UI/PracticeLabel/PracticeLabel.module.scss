@@ -12,6 +12,7 @@
   line-height: 39px;
   transition: 0.2s;
   color: $practice-color;
+  user-select: none;
 
   &:hover {
     color: $practice-hover-color;

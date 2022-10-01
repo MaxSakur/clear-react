@@ -7,7 +7,7 @@ import Menu from "./components/Menu";
 import MainPage from "./components/MainPage";
 import { api } from "./api";
 import { Back, Logo, PracticeLabel } from "./components/UI";
-import CategoryList from "./components/CategoryList";
+import Carousel from "./components/Carousel";
 
 function App() {
   const dispatch = useDispatch()
@@ -38,7 +38,7 @@ function App() {
             ?
             <Menu>
               <Logo />
-              <CategoryList />
+              <Carousel />
               <PracticeLabel />
               <Back />
             </Menu>

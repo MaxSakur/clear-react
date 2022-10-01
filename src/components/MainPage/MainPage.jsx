@@ -1,12 +1,12 @@
 import React from 'react'
+import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Back, Burger, Logo, PracticeLabel } from '../UI'
 import CardsList from '../CardsList'
 import Menu from '../Menu'
+import Carousel from '../Carousel'
 
 import style from './MainPage.module.scss'
-import CategoryList from '../CategoryList'
-import { useState } from 'react'
 
 export const MainPage = ({ width }) => {
 
@@ -36,7 +36,7 @@ export const MainPage = ({ width }) => {
         burgerView && width < 993 ?
           <div className={style['burger-wrapper']}>
             <Menu>
-              <CategoryList />
+              <Carousel />
               <PracticeLabel />
               <Back />
             </Menu>
