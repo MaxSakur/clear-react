@@ -19,7 +19,6 @@ export const Carousel = () => {
   const carouselItemHeight = 67;
 
   const categoryList = useSelector(store => store.categoryList.categories)
-
   const [startArray, setStartArray] = useState(0)
 
   const inactiveDownArrow = startArray >= (categoryList.length - 5) * carouselItemHeight
@@ -28,7 +27,6 @@ export const Carousel = () => {
   const translateUP = () => {
     if (inactiveUpArrow) return
     setStartArray(prev => prev - carouselItemHeight)
-
   }
   const translateDown = () => {
     if (inactiveDownArrow) return
@@ -53,9 +51,11 @@ export const Carousel = () => {
                   key={index + category.id}
                   style={{ height: carouselItemHeight }}>
                   <CategoryItem
+                    category={category}
                     index={index}
-                    name={category.name}
-                  /></li>
+                    id={category.id}
+                  />
+                </li>
               })}
             </ul>
           </div>

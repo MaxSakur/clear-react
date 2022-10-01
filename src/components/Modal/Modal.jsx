@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { ADD, CLOSE, MODAL_INPUT_PLACEHOLDER } from '../../assets/constants'
 import { updateCategoriesAC } from '../../store/reducers/categoryReducer'
+import { addCategoryListToLocalStorage } from '../../utils/localStorage'
 import style from './Modal.module.scss'
 
 export const Modal = ({ closeModal }) => {
@@ -11,11 +12,6 @@ export const Modal = ({ closeModal }) => {
 
   const categoryList = useSelector(store => store.categoryList.categories)
   const [inputText, setInputText] = useState('')
-
-  const addToLocalStorage = (data) => {
-    const localCategoryList = JSON.stringify(data)
-    localStorage.setItem('localCategoryList', localCategoryList)
-  }
 
   // Adding a new category
   const addNewCategory = (title) => {
@@ -27,7 +23,7 @@ export const Modal = ({ closeModal }) => {
     if (title.trim().length > 0) {
       const updatedCategoryList = [...categoryList, newCategory]
       dispatch(updateCategoriesAC(updatedCategoryList))
-      addToLocalStorage(updatedCategoryList)
+      addCategoryListToLocalStorage(updatedCategoryList)
       setInputText('');
       closeModal();
     }

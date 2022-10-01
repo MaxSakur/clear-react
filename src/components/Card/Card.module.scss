@@ -58,11 +58,7 @@
   }
 
   &_active {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     @extend .card-corner;
-    width: 50px;
     background: $practice-color;
   }
 }

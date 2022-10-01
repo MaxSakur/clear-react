@@ -1,20 +1,33 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { updateActiveCategoryAC } from '../../store/reducers/categoryReducer';
+import { updateActiveCategoryAC, updateCategoriesAC } from '../../store/reducers/categoryReducer';
+import { addCategoryListToLocalStorage } from '../../utils/localStorage'
 import styles from './CategoryItem.module.scss'
 
-export const CategoryItem = ({ name, index }) => {
-
-  const [categoryName, setCategoryName] = useState(name)
-  const actuallyIndex = useSelector(state => state.categoryList.activeCategoryIndex)
-
-  const changCategoryName = e => setCategoryName(e.target.value)
+export const CategoryItem = ({ category, index, id }) => {
 
   const dispatch = useDispatch()
+  const [categoryName, setCategoryName] = useState(category.name)
+  const categoryList = useSelector(store => store.categoryList.categories)
+  const actuallyIndex = useSelector(state => state.categoryList.activeCategoryIndex)
+
+  const updateCategoryList = (arr, id, name) => arr.map(n => n.id === id ? { ...n, name: name } : n);
+
+  const changeName = (e) => {
+    setCategoryName(e.target.value)
+  }
+
+  const changeCategoryName = () => {
+    const updatedCategoryList = updateCategoryList(categoryList, id, categoryName)
+    dispatch(updateCategoriesAC(updatedCategoryList))
+    addCategoryListToLocalStorage(updatedCategoryList)
+  }
 
   const changeActiveCategory = (i) => {
     dispatch(updateActiveCategoryAC(i))
   }
+
+  // console.log(categoryList[index]);
 
   return (
     <div
@@ -28,7 +41,8 @@ export const CategoryItem = ({ name, index }) => {
           'category-input_active']}
         type="text"
         value={categoryName}
-        onChange={changCategoryName} />
+        onChange={changeName}
+        onBlur={changeCategoryName} />
     </div>
   )
 }
