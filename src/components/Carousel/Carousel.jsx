@@ -35,8 +35,6 @@ export const Carousel = () => {
     else setStartArray(prev => prev + carouselItemHeight)
   }
 
-  console.log(startArray);
-
   return (
     <>
       {modalView ? <Modal closeModal={changeModalView} /> : null}

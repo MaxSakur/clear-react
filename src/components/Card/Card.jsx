@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import { SAVE } from '../../assets/constants'
 import styles from './Card.module.scss'
 
 export const Card = ({ title }) => {
@@ -12,20 +13,28 @@ export const Card = ({ title }) => {
     setFrontCardSide(prev => !prev)
   }
 
+  const editWord = (e) => {
+    setWordValue(e.target.value)
+  }
+
   return (
     <div
       className={styles['wrapper']}>
       <div
-        onClick={() => { changeFrontCardSide(frontCardSide) }}
-        className={styles[frontCardSide ? 'card-corner' : 'card-corner_active']}></div>
+        className={styles[frontCardSide ? 'card-corner' : 'card-corner_active']}
+        onClick={() => { changeFrontCardSide(frontCardSide) }}>
+        {!frontCardSide ? SAVE : null}
+      </div>
       <div className={styles[frontCardSide ? 'card' : 'card_active']}>
         {/* <div className={styles['card-corner']}></div> */}
         <input
           type="text"
           value={wordValue}
-          onChange={(e) => setWordValue(e.target.value)}
+          onChange={editWord}
           className={styles['card-input']}
-          placeholder='Add new word...' />
+          placeholder='Add new word...'
+        // onMouseLeave={console.log('out')}
+        />
       </div>
       <div className={styles[frontCardSide ? 'card-translate' : 'card-translate_active']}>
         {/* <div className={styles['card-corner']}></div> */}
@@ -34,7 +43,8 @@ export const Card = ({ title }) => {
           value={translateValue}
           onChange={(e) => setTranslateValue(e.target.value)}
           className={styles['card-translate-input']}
-          placeholder='Add translate...' />
+          placeholder='Add translate...'
+        />
       </div>
     </div >
   )
