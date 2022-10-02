@@ -19,6 +19,7 @@ export const MainPage = ({ width, itemsArray }) => {
   useEffect(() => {
     const activePracticeText = practiceTextArray[activeCategory]
     setPracticeText(activePracticeText)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeCategory]);
 
   const [practiceText, setPracticeText] = useState('')
