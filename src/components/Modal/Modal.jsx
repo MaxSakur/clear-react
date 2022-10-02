@@ -12,13 +12,15 @@ export const Modal = ({ closeModal }) => {
 
   const categoryList = useSelector(store => store.categoryList.categories)
   const [inputText, setInputText] = useState('')
+  const clearArray = new Array(6).fill('')
 
   // Adding a new category
   const addNewCategory = (title) => {
     const newCategory = {
       id: categoryList.length,
       name: title.trim(),
-      data: new Array(6).fill('')
+      data: clearArray,
+      translate: clearArray
     }
     if (title.trim().length > 0) {
       const updatedCategoryList = [...categoryList, newCategory]
