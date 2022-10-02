@@ -11,7 +11,7 @@ export const CategoryItem = ({ category, index, id }) => {
   const categoryList = useSelector(store => store.categoryList.categories)
   const actuallyIndex = useSelector(state => state.categoryList.activeCategoryIndex)
 
-  const updateCategoryList = (arr, id, name) => arr.map(n => n.id === id ? { ...n, name: name } : n);
+  const updateCategoryList = (arr, id, name) => arr.map(el => el.id === id ? { ...el, name: name } : el);
 
   const changeName = (e) => {
     setCategoryName(e.target.value)
@@ -26,8 +26,6 @@ export const CategoryItem = ({ category, index, id }) => {
   const changeActiveCategory = (i) => {
     dispatch(updateActiveCategoryAC(i))
   }
-
-  // console.log(categoryList[index]);
 
   return (
     <div
