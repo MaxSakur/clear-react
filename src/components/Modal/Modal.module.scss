@@ -11,54 +11,55 @@
   left: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 1;
-}
 
-.modal-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  padding: 40px 40px 20px 40px;
-  background: white;
-  border-radius: 40px;
-  min-width: 300px;
-}
+  &_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: $primary-padding * 4;
+    padding-bottom: $primary-padding * 2;
+    background: white;
+    border-radius: 40px;
+    min-width: 300px;
+  }
 
-.modai-input {
-  // all: unset;
-  outline: none;
-  width: 350px;
-  text-align: center;
-  border: none;
-  background: #ECF5F5;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 29px;
-  color: #000000;
-  padding: 10px 10px;
-  border-radius: 15px;
-
-  &::placeholder {
+  &_input {
+    // all: unset;
+    outline: none;
+    width: 350px;
+    text-align: center;
+    border: none;
+    background: #ECF5F5;
     font-weight: 700;
     font-size: 20px;
     line-height: 29px;
-    color: #95AABB;
+    color: #000000;
+    padding: $primary-padding;
+    border-radius: 15px;
+
+    &::placeholder {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 29px;
+      color: #95AABB;
+    }
   }
-}
 
-.modal-btn {
-  outline: none;
-  border: none;
-  border-radius: 15px;
-  padding: 10px 30px;
-  background: $practice-card-color;
-  margin: 25px 0 0 10px;
-  font-weight: 700;
-  font-size: 12px;
-  cursor: pointer;
-  transition: 0.2s;
+  &_btn {
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    padding: ($primary-padding) ($primary-padding * 3);
+    background: $practice-card-color;
+    margin: ($primary-margin * 2) 0 0 10px;
+    font-weight: 700;
+    font-size: 12px;
+    cursor: pointer;
+    transition: $transition;
 
-  &:hover {
-    background: $practice-color;
+    &:hover {
+      background: $practice-color;
+    }
   }
 }

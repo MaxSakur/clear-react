@@ -1,1 +1,2 @@
-export * from './cart-item';
+import { Card } from './Card';
+export default Card

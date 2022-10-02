@@ -1,9 +1,9 @@
 import * as React from "react"
 import styles from './DownArrow.module.scss'
 
-const DownArrow = ({ onClick, color }) => (
+const DownArrow = ({ onClick, color, style }) => (
   <svg
-    className={styles["down-arrow"]}
+    className={styles[style]}
     width={42}
     height={11}
     fill="none"

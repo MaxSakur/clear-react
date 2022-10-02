@@ -1,11 +1,16 @@
 @import '../../../assets/style';
 
-.down-arrow {
-  margin-top: 15px;
+.downArrow {
+  margin-top: $primary-margin;
   cursor: pointer;
-  transition: 0.2s;
+  transition: $transition;
 
   &:hover {
     transform: scale(1.05);
+  }
+
+  &_inactive {
+    @extend .downArrow;
+    cursor: auto;
   }
 }

@@ -3,7 +3,7 @@ import { LOGO } from "../../../assets/constants"
 import styles from './Logo.module.scss'
 
 const Logo = (props) => (
-  <div className={styles['logo']}>
+  <div className={styles.logo}>
     <svg
       width={92}
       height={46}

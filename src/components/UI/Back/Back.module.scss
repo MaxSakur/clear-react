@@ -4,18 +4,17 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-}
 
-.back-title {
-  margin-left: 12px;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 29px;
-  color: $back-color;
-  transition: 0.2s;
-  user-select: none;
+  &_title {
+    margin-left: $primary-margin;
+    font-weight: 700;
+    font-size: $primary-font-size * 1.5;
+    color: $back-color;
+    transition: $transition;
+    user-select: none;
 
-  &:hover {
-    color: $back-hover-color;
+    &:hover {
+      color: $back-hover-color;
+    }
   }
 }

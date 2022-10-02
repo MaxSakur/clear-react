@@ -1,22 +1,23 @@
 @import '../../assets/style';
 
-.input__wrapper {
+.inputWrapper {
   display: flex;
   justify-content: center;
   cursor: pointer;
-  margin-bottom: 7px;
-  padding: 20px 15px;
-  width: 100%;
+  margin-bottom: $primary-margin / 2;
+  padding-top: ($primary-padding * 2);
+  padding-bottom: ($primary-padding * 2);
+  width: $primary-size * 2;
   background: $primary-color;
-  border-radius: 50px;
-  transition: background 0.3s;
+  border-radius: $border-radius;
+  transition: background $transition * 1.5;
 
   &:hover {
     background: $main-card-corner;
   }
 
   &_active {
-    @extend .input__wrapper;
+    @extend .inputWrapper;
     background: $menu-main-color;
     color: $white-color;
 
@@ -27,21 +28,19 @@
   }
 }
 
-.category-input {
+.categoryInput {
   font-weight: 700;
-  font-size: 16px;
+  font-size: $primary-font-size;
+  color: $black-color;
+  text-align: center;
   background: transparent;
   border: none;
-  color: $black-color;
-  width: 50%;
-  text-align: center;
-  transition: background 0.3s;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  width: 70%;
+  transition: background $transition * 1.5;
+  @extend %extend-text-ellipsis;
 
   &_active {
-    @extend .category-input;
+    @extend .categoryInput;
     color: $white-color;
   }
 

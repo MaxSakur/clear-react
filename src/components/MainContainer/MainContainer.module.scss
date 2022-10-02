@@ -2,24 +2,20 @@
 
 .mainContainer {
   display: flex;
-  gap: 35px;
+  gap: $primary-font-size * 2;
   background-color: white;
-  padding: 50px;
-  margin-top: 30px;
-  border-radius: 60px;
+  padding: $primary-padding * 5;
+  margin: $primary-margin;
+  border-radius: $border-radius * 2;
   overflow: hidden;
 
   @media (max-width: 1040px) {
-    margin: 30px;
-  }
-
-  @media (max-width: 650px) {
-    padding: 20px 35px
+    padding: ($primary-padding * 2)
   }
 
   @media (max-width: 445px) {
     padding: 0;
-    margin: 30px 0;
+    margin: ($primary-margin * 2) 0;
     background: transparent;
   }
 }

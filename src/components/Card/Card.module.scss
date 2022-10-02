@@ -1,24 +1,24 @@
 @import '../../assets/style';
 
 .wrapper {
-  width: 310px;
-  height: 148px;
+  width: $primary-size * 3;
+  height: $primary-size * 1.2;
   position: relative;
-  perspective: 1000px;
+  perspective: $primary-size * 10;
 }
 
 .card,
-.card-translate {
+.cardTranslate {
   position: absolute;
   top: 0;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px;
-  border-radius: 40px;
+  padding: $border-radius;
+  border-radius: $border-radius;
   backface-visibility: hidden;
-  transition: 1s;
+  transition: $transition * 5;
 }
 
 .card {
@@ -30,27 +30,27 @@
   }
 }
 
-.card-translate {
+.cardTranslate {
   background: $practice-card-color;
   transform: rotateY(180deg);
 
   &_active {
-    @extend .card-translate;
+    @extend .cardTranslate;
     box-shadow: 0px 6px 22px -10px rgba(0, 0, 0, 0.3);
     transform: rotateY(360deg);
   }
 }
 
-.card-corner {
+.cardCorner {
   cursor: pointer;
   position: absolute;
-  width: 25px;
-  height: 25px;
-  right: 15px;
-  bottom: 15px;
+  width: $primary-size * 0.25;
+  height: $primary-size * 0.25;
+  right: $primary-padding * 1.5;
+  bottom: $primary-padding * 1.5;
   background: $main-card-corner;
-  border-radius: 15px;
-  transition: 0.3s;
+  border-radius: $border-radius / 2;
+  transition: $transition * 1.5;
   z-index: 1;
 
   &:hover {
@@ -58,36 +58,29 @@
   }
 
   &_active {
-    @extend .card-corner;
+    @extend .cardCorner;
     background: $practice-color;
   }
 }
 
-.card-input,
-.card-translate-input {
-  // all: unset;
+.cardInput,
+.cardTranslateInput {
   outline: none;
-  width: 250px;
+  width: $primary-size * 2.5;
   text-align: center;
   border: none;
   background: none;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 29px;
-  color: #000000;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: $primary-font-size * 1.5;
+  color: $back-color;
+  @extend %extend-text-ellipsis;
 
   &::placeholder {
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 29px;
     color: $main-card-corner;
   }
 }
 
-.card-translate-input {
+.cardTranslateInput {
   &::placeholder {
     color: $practice-color;
   }

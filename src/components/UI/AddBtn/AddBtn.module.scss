@@ -1,0 +1,10 @@
+@import '../../../assets/style';
+
+.addBtn {
+  margin-top: $primary-margin * 2;
+  font-weight: 700;
+  font-size: $primary-font-size;
+  color: $main-card-corner;
+  cursor: pointer;
+  user-select: none;
+}

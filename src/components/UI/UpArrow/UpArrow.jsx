@@ -1,8 +1,9 @@
 import * as React from "react"
 import styles from './UpArrow.module.scss'
 
-const UpArrow = ({ onClick, color }) => (
-  <svg className={styles["up-arrow"]}
+const UpArrow = ({ onClick, color, style }) => (
+  <svg
+    className={styles[style]}
     width={42}
     height={11}
     fill="none"

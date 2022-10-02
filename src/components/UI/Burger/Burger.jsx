@@ -2,7 +2,7 @@ import * as React from "react"
 import styles from './Burger.module.scss'
 
 const Burger = ({ changeView }) => (
-  <div className={styles['burger']}>
+  <div className={styles.burger}>
     <svg
       width={30}
       height={23}

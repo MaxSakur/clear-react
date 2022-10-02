@@ -1,8 +1,8 @@
 @import '../../assets/style';
 
-.menuWrapper {
+.verticalCarouselContainer {
+  padding-top: $primary-padding;
   display: flex;
   flex-direction: column;
-  gap: $primary-font-size * 2;
   align-items: center;
 }

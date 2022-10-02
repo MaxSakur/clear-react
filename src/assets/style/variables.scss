@@ -15,9 +15,17 @@ $main-card-corner: #95AABB; // placeholder | sidebar arrow
 $back-color: #2E3337;
 $back-hover-color: #454a4e;
 
-// sizes
-$primary-size: 200px;
 $main-container-radius: 60px;
 
-// fonts sizes
-$primary-font: 16px;
+$primary-font-size: 16px;
+$primary-size: 100px;
+$border-radius: 30px;
+$primary-margin: 12px;
+$primary-padding: 10px;
+$transition: 0.2s;
+
+%extend-text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

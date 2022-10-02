@@ -3,7 +3,7 @@ import { BACK } from "../../../assets/constants"
 import styles from './Back.module.scss'
 
 const Back = (props) => (
-  <div className={styles['back']}>
+  <div className={styles.back}>
     <svg
       width={12}
       height={24}
@@ -20,7 +20,7 @@ const Back = (props) => (
         fill="#2E3337"
       />
     </svg>
-    <div className={styles['back-title']}>{BACK}</div>
+    <div className={styles.back_title}>{BACK}</div>
   </div>
 )
 

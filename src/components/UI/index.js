@@ -3,8 +3,8 @@ import Burger from './Burger';
 import Logo from './Logo';
 import PracticeLabel from './PracticeLabel';
 import UpArrow from './UpArrow';
-import UpArrowDisabled from './UpArrowDisabled';
 import DownArrow from './DownArrow';
-import DownArrowDisabled from './DownArrowDisabled';
+import AddBtn from './AddBtn';
 
-export { Back, Burger, Logo, PracticeLabel, UpArrow, UpArrowDisabled, DownArrow, DownArrowDisabled }
+
+export { Back, Burger, Logo, PracticeLabel, UpArrow, DownArrow, AddBtn }

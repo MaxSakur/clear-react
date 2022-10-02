@@ -20,7 +20,8 @@ export const Modal = ({ closeModal }) => {
       id: categoryList.length,
       name: title.trim(),
       data: clearArray,
-      translate: clearArray
+      translate: clearArray,
+      practice: "",
     }
     if (title.trim().length > 0) {
       const updatedCategoryList = [...categoryList, newCategory]
@@ -45,9 +46,9 @@ export const Modal = ({ closeModal }) => {
       className={style.modal}>
       <div
         onClick={avoidEmptyClick}
-        className={style['modal-content']}>
+        className={style.modal_content}>
         <input
-          className={style['modai-input']}
+          className={style.modal_input}
           type="text"
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
@@ -56,11 +57,12 @@ export const Modal = ({ closeModal }) => {
         <div>
           <button
             onClick={closeModal}
-            className={style['modal-btn']}>{CLOSE}
+            className={style.modal_btn}>{CLOSE}
           </button>
           <button
-            onClick={() => { addNewCategory(inputText) }}
-            className={style['modal-btn']}>{ADD}</button>
+            onClick={() => addNewCategory(inputText)}
+            className={style.modal_btn}>{ADD}
+          </button>
         </div>
       </div>
     </div>

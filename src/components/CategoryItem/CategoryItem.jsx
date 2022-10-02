@@ -19,8 +19,13 @@ export const CategoryItem = ({ category, index, id }) => {
 
   const changeCategoryName = () => {
     const updatedCategoryList = updateCategoryList(categoryList, id, categoryName)
-    dispatch(updateCategoriesAC(updatedCategoryList))
-    addCategoryListToLocalStorage(updatedCategoryList)
+    if (Array.isArray(updatedCategoryList) && updatedCategoryList.length > 0) {
+      dispatch(updateCategoriesAC(updatedCategoryList))
+      addCategoryListToLocalStorage(updatedCategoryList)
+    }
+    else {
+      return
+    }
   }
 
   const changeActiveCategory = (i) => {
@@ -30,13 +35,13 @@ export const CategoryItem = ({ category, index, id }) => {
   return (
     <div
       className={styles[index !== actuallyIndex ?
-        'input__wrapper' :
-        'input__wrapper_active']}
+        'inputWrapper' :
+        'inputWrapper_active']}
       onClick={() => changeActiveCategory(index)}>
       <input
         className={styles[index !== actuallyIndex ?
-          'category-input' :
-          'category-input_active']}
+          'categoryInput' :
+          'categoryInput_active']}
         type="text"
         value={categoryName}
         onChange={changeName}

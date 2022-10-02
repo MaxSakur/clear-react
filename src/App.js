@@ -1,13 +1,14 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useWindowSize } from "./hooks";
 import { updateCategoriesAC } from "./store/reducers/categoryReducer";
 import MainContainer from "./components/MainContainer";
 import Menu from "./components/Menu";
 import MainPage from "./components/MainPage";
+import VerticalCarousel from "./components/VerticalCarousel";
+import { Logo } from "./components/UI";
 import { api } from "./api";
-import { Back, Logo, PracticeLabel } from "./components/UI";
-import Carousel from "./components/Carousel";
+import { V_CAROUSEL_ITEM_HEIGHT, V_CAROUSEL_VISIBLE_ITEMS_QUANTITY } from "./assets/constants";
 
 function App() {
   const dispatch = useDispatch()
@@ -28,6 +29,7 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const categoryList = useSelector(store => store.categoryList.categories)
   const [width] = useWindowSize();
 
   return (
@@ -38,13 +40,14 @@ function App() {
             ?
             <Menu>
               <Logo />
-              <Carousel />
-              <PracticeLabel />
-              <Back />
+              <VerticalCarousel
+                itemsQuantity={V_CAROUSEL_VISIBLE_ITEMS_QUANTITY}
+                itemHeight={V_CAROUSEL_ITEM_HEIGHT}
+                itemsArray={categoryList} />
             </Menu>
             : null
         }
-        <MainPage width={width} />
+        <MainPage width={width} itemsArray={categoryList} />
       </MainContainer>
     </div>
   );
