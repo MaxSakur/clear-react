@@ -1,6 +1,5 @@
-import * as React from "react"
-import { LOGO } from "../../../assets/constants"
-import styles from './Logo.module.scss'
+import * as React from "react";
+import styles from "./Logo.module.scss";
 
 const Logo = (props) => (
   <div className={styles.logo}>
@@ -21,5 +20,5 @@ const Logo = (props) => (
       />
     </svg>
   </div>
-)
-export default Logo
+);
+export default Logo;

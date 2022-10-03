@@ -1,10 +1,10 @@
-export const UPDATE_CATEGORIES = 'UPDATE_CATEGORIES';
-export const UPDATE_ACTIVE_CATEGORY = 'UPDATE_ACTIVE_CATEGORY';
+export const UPDATE_CATEGORIES = "UPDATE_CATEGORIES";
+export const UPDATE_ACTIVE_CATEGORY = "UPDATE_ACTIVE_CATEGORY";
 
 const defaultState = {
   categories: [],
-  activeCategoryIndex: 0
-}
+  activeCategoryIndex: 0,
+};
 
 function categoryReducer(state = defaultState, action) {
   switch (action.type) {
@@ -19,7 +19,7 @@ function categoryReducer(state = defaultState, action) {
         activeCategoryIndex: action.payload.index,
       };
     default:
-      return state
+      return state;
   }
 }
 
@@ -37,4 +37,4 @@ export const updateActiveCategoryAC = (index) => ({
   },
 });
 
-export default categoryReducer
+export default categoryReducer;

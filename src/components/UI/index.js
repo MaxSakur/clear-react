@@ -1,10 +1,8 @@
-import Back from './Back';
-import Burger from './Burger';
-import Logo from './Logo';
-import PracticeLabel from './PracticeLabel';
-import UpArrow from './UpArrow';
-import DownArrow from './DownArrow';
-import AddBtn from './AddBtn';
+import Back from "../SVG/Back";
+import Burger from "../Burger";
+import Logo from "../SVG/Logo";
+import UpArrow from "../SVG/UpArrow";
+import DownArrow from "../SVG/DownArrow";
+import Button from "../Button";
 
-
-export { Back, Burger, Logo, PracticeLabel, UpArrow, DownArrow, AddBtn }
+export { Back, Burger, Logo, UpArrow, DownArrow, Button };
