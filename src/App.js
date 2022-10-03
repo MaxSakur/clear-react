@@ -41,7 +41,7 @@ function App() {
             <Menu>
               <Logo />
               <VerticalCarousel
-                itemsQuantity={V_CAROUSEL_VISIBLE_ITEMS_QUANTITY}
+                maxItemsCount={V_CAROUSEL_VISIBLE_ITEMS_QUANTITY}
                 itemHeight={V_CAROUSEL_ITEM_HEIGHT}
                 itemsArray={categoryList} />
             </Menu>

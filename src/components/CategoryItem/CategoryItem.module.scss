@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   cursor: pointer;
-  margin-bottom: $primary-margin / 2;
+  // margin-bottom: nth($sizes, 1);
   padding-top: ($primary-padding * 2);
   padding-bottom: ($primary-padding * 2);
   width: $primary-size * 2;

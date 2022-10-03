@@ -8,46 +8,37 @@ export const CategoryItem = ({ category, index, id }) => {
 
   const dispatch = useDispatch()
   const [categoryName, setCategoryName] = useState(category.name)
-  const categoryList = useSelector(store => store.categoryList.categories)
-  const actuallyIndex = useSelector(state => state.categoryList.activeCategoryIndex)
+  const { categories, activeCategoryIndex } = useSelector(state => state.categoryList)
 
-  const updateCategoryList = (arr, id, name) => arr.map(el => el.id === id ? { ...el, name: name } : el);
+  const updateCategoryList = (arr, id, name) => arr.map(el => el.id === id ? { ...el, name: name } : el)
 
-  const changeName = (e) => {
-    setCategoryName(e.target.value)
-  }
+  const handleChangeName = (e) => setCategoryName(e.target.value)
 
   const changeCategoryName = () => {
-    const updatedCategoryList = updateCategoryList(categoryList, id, categoryName)
+    const updatedCategoryList = updateCategoryList(categories, id, categoryName)
     if (Array.isArray(updatedCategoryList) && updatedCategoryList.length > 0) {
       dispatch(updateCategoriesAC(updatedCategoryList))
       addCategoryListToLocalStorage(updatedCategoryList)
     }
-    else {
-      return
-    }
+    else return
   }
 
-  const changeActiveCategory = (i) => {
-    dispatch(updateActiveCategoryAC(i))
-  }
+  const changeActiveCategory = i => dispatch(updateActiveCategoryAC(i))
+
+  const categoryInputStyles = index !== activeCategoryIndex ? styles.categoryInput : styles.categoryInput_active
 
   return (
     <div
-      className={styles[index !== actuallyIndex ?
+      className={styles[index !== activeCategoryIndex ?
         'inputWrapper' :
         'inputWrapper_active']}
       onClick={() => changeActiveCategory(index)}>
       <input
-        className={styles[index !== actuallyIndex ?
-          'categoryInput' :
-          'categoryInput_active']}
+        className={categoryInputStyles}
         type="text"
         value={categoryName}
-        onChange={changeName}
+        onChange={handleChangeName}
         onBlur={changeCategoryName} />
     </div>
   )
 }
-
-// добавить правку массивов при изменении инпутов

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Burger, Logo, PracticeLabel } from '../UI'
 import VerticalCarousel from '../VerticalCarousel'
 import Card from '../Card'
@@ -8,19 +8,23 @@ import Menu from '../Menu'
 import { PTACTICE_TEXTAREA_PLACEHOLDER, V_CAROUSEL_ITEM_HEIGHT, V_CAROUSEL_VISIBLE_ITEMS_QUANTITY } from '../../assets/constants'
 
 import style from './MainPage.module.scss'
+import { updateCategoriesAC } from '../../store/reducers/categoryReducer'
 
 export const MainPage = ({ width, itemsArray }) => {
-
   const activeCategory = useSelector(store => store.categoryList.activeCategoryIndex)
+  const dispatch = useDispatch()
+
   const title = itemsArray.map((cat) => cat.name)
   const wordsArray = itemsArray.map((cat) => cat.data)
   const practiceTextArray = itemsArray.map((cat) => cat.practice)
+  // сделать декомпозицию
+
+  const activePracticeText = practiceTextArray[activeCategory] || ''
 
   useEffect(() => {
-    const activePracticeText = practiceTextArray[activeCategory]
     setPracticeText(activePracticeText)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeCategory]);
+  }, [activePracticeText]);
+
 
   const [practiceText, setPracticeText] = useState('')
   const [burgerView, setBurgerView] = useState(false)
@@ -32,6 +36,19 @@ export const MainPage = ({ width, itemsArray }) => {
   const changeBurgerView = () => {
     setBurgerView(prev => !prev)
   }
+
+  const updateCurrentItemPracticeText = (arr, activeI, text) => {
+    const el = itemsArray.filter(el => el.id === [activeCategory])
+    const test = [...itemsArray, el.practice = practiceText]
+    console.log(test);
+  }
+
+  const testFunc = (arr, activeI, text) => {
+    const test2 = arr.map(el => el.id === [activeI] ? el.practice = text : el)
+    console.log(test2);
+  }
+
+  console.log(testFunc(itemsArray, activeCategory, practiceText));
 
   return (
     <div className={style.mainPage}>
@@ -77,6 +94,7 @@ export const MainPage = ({ width, itemsArray }) => {
         placeholder={PTACTICE_TEXTAREA_PLACEHOLDER}
         value={practiceText}
         onChange={changePracticeText}
+        onBlur={updateCurrentItemPracticeText}
       />
     </div>
   )

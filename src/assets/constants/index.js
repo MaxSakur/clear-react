@@ -12,5 +12,5 @@ export const SAVE = 'Save'
 export const MODAL_INPUT_PLACEHOLDER = 'Enter the category name...'
 
 // Vertical Carousel
-export const V_CAROUSEL_ITEM_HEIGHT = 67
+export const V_CAROUSEL_ITEM_HEIGHT = 60
 export const V_CAROUSEL_VISIBLE_ITEMS_QUANTITY = 6

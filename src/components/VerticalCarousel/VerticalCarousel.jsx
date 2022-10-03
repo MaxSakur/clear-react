@@ -6,7 +6,7 @@ import { AddBtn, DownArrow, UpArrow } from "../UI";
 import styles from "./VerticalCarousel.module.scss";
 
 
-export const VerticalCarousel = ({ itemsArray = [], itemHeight = 0, itemsQuantity = 0 }) => {
+export const VerticalCarousel = ({ itemsArray = [], itemHeight = 0, maxItemsCount = 0 }) => {
 
   // Modal view
   const [modalView, setModalView] = useState(false)
@@ -15,14 +15,21 @@ export const VerticalCarousel = ({ itemsArray = [], itemHeight = 0, itemsQuantit
   const [startArray, setStartArray] = useState(0)
 
   const carouselItemHeight = itemHeight;
-  const carouselContainerVisibleHeight =
-    itemsArray.length > itemsQuantity ?
-      carouselItemHeight * itemsQuantity :
-      carouselItemHeight * itemsArray.length
 
-  const inactiveDownArrow =
-    startArray >= (itemsArray.length - itemsQuantity) * carouselItemHeight
+  const carouselContainerVisibleHeight = itemsArray.length > maxItemsCount
+    ?
+    carouselItemHeight * maxItemsCount
+    :
+    carouselItemHeight * itemsArray.length
+
+  // const carouselConditions = itemsArray.length > maxItemsCount
+  // const carouselContainerVisibleHeight = carouselItemHeight * carouselConditions ? maxItemsCount : itemsArray.length
+  // debugger
+
+
+  // For arrows styles
   const inactiveUpArrow = startArray === 0
+  const inactiveDownArrow = startArray >= (itemsArray.length - maxItemsCount) * carouselItemHeight
 
   const translateUP = () => {
     if (inactiveUpArrow) return
